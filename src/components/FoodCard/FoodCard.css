@@ -1,0 +1,22 @@
+.Food-Card {
+    border: none !important;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.Food-Card:hover {
+    box-shadow: 2px 2px 20px 0 #00000056;
+}
+
+.Food-Card,
+.Food-Card img {
+    border-radius: 0 !important;
+    transition: 0.3s;
+}
+
+.Food-Card img {
+    transform: scaleX(1);
+}
+.Food-Card img:hover {
+    transform: scaleX(1.1);
+}

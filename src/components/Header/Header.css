@@ -1,0 +1,62 @@
+.Header {
+    background-image: linear-gradient(
+            rgba(255, 255, 255, 0.712),
+            rgba(255, 255, 255, 0.712)
+        ),
+        url('../../images/food-bg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    height: 400px;
+    position: relative;
+}
+
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.home-title {
+    font-size: 30px;
+}
+
+.home-title span {
+    font-weight: 900;
+}
+
+.search-from {
+    background-color: #ffffff;
+    justify-content: center;
+    box-shadow: 0 0 29px 0 #e97d0a6c;
+}
+
+.search-input {
+    width: 80% !important;
+    padding: 27px 11px;
+    border-radius: 0;
+    border: 1px solid var(--main-color);
+}
+
+.search-btn {
+    padding: 15px 43px;
+    border-radius: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 1px solid var(--main-color) !important;
+    background-color: var(--main-color) !important;
+}
+
+@media (max-width: 992px) {
+    .search-from {
+        background-color: transparent;
+        box-shadow: 0 0 0 0 transparent;
+    }
+
+    .search-input {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+}

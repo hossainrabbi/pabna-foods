@@ -1,0 +1,14 @@
+.Food-Details .food-title {
+    position: relative;
+}
+
+.Food-Details .food-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background-color: var(--main-color);
+}
