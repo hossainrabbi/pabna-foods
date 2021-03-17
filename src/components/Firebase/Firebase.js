@@ -3,28 +3,31 @@ import 'firebase/auth';
 import { firebaseConfig } from './Firebase.config';
 
 export const initializeLogInFrameWork = () => {
-    firebase.initializeApp(firebaseConfig);
+    if (firebase.apps.length === 0) {
+        firebase.initializeApp(firebaseConfig);
+    }
 };
 
-export const handleGoogleSignIn = () => {
-    const googleProvider = new firebase.auth.GoogleAuthProvider();
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+export const facebookProvider = new firebase.auth.FacebookAuthProvider();
+export const githubProvider = new firebase.auth.GithubAuthProvider();
 
+export const handleSignIn = (provider) => {
     return firebase
         .auth()
-        .signInWithPopup(googleProvider)
+        .signInWithPopup(provider)
         .then((res) => {
-            const { displayName, email, photoUR } = res.user;
+            const { displayName, email, photoURL } = res.user;
             return {
                 isSignIn: true,
                 name: displayName,
                 email: email,
-                photo: photoUR,
+                photo: photoURL,
                 success: true,
                 error: '',
             };
         })
         .catch((err) => {
-            const errMessage = err.message;
-            return { error: errMessage };
+            return { error: err.message };
         });
 };

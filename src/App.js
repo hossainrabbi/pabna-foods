@@ -7,6 +7,7 @@ import FoodDetails from './components/FoodDetails/FoodDetails';
 import NotFound from './components/NotFound/NotFound';
 import SignIn from './components/SignIn/SignIn';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Profile from './components/Profile/Profile';
 
 export const UserContext = createContext();
 
@@ -26,6 +27,9 @@ const App = () => {
                     </Route>
                     <PrivateRoute path="/food/:id">
                         <FoodDetails />
+                    </PrivateRoute>
+                    <PrivateRoute path="/profile">
+                        <Profile />
                     </PrivateRoute>
                     <Route path="*">
                         <NotFound />
